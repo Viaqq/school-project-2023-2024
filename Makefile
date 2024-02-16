@@ -12,3 +12,6 @@ work_array.o: work_array.cpp
 
 clean:
 	rm -rf *.o
+
+clean_all:
+	rm -rf *.o a.out
