@@ -2,6 +2,26 @@
 #include "work_array.h"
 #include "sorts.h"
 
+int CheckSorts(const int* Ar, int size) {
+	int minToMax = 0;
+	int maxToMin = 0;
+	for (int i = 0; i < size - 1; i++) {
+		if (Ar[i] <= Ar[i + 1]) {
+			minToMax++;
+		}
+		if (Ar[i] >= Ar[i + 1]) {
+			maxToMin++;
+		}
+	}
+	if (minToMax == size - 1) {
+		return 0;
+	} else if (maxToMin == size - 1) {
+		return 1;
+	} else {
+		return -1;
+	}
+}
+
 void CreateEqMas(int* Ar, int* _Ar, int size) {
         for (int i = 0; i < size; i++) {
                 _Ar[i] = Ar[i];
@@ -67,5 +87,31 @@ int main() {
         ShowAr(______Ar, 9);
         std::cout << std::endl;
 
+	std::cout << "Check Sorts" << std::endl;
+	int Test0[4] = {4, 4, 4, 4};
+	int Test1[5] = {1, 2, 2, 3, 80};
+	int Test2[6] = {896, 67, 9, 6, 3, 3};
+	int Test3[8] = {1, 1, 4, 4, 789, 789, 2890, 56785};
+	int Test4[8] = {456, 678, 34, 3, 2, 1};
+	int Test5[0] = {};
+	ShowAr(Test0, 4);
+	std::cout << "Must return 0" << std::endl;
+	ShowAr(Test1, 5);
+	std::cout << "Must return 0" << std::endl;
+	ShowAr(Test2, 6);
+	std::cout << "Must return 1" << std::endl;
+	ShowAr(Test3, 8);
+	std::cout << "Must return 0" << std::endl;
+	ShowAr(Test4, 8);
+	std::cout << "Must return -1" << std::endl;
+	ShowAr(Test5, 0);
+	std::cout << "Must return 0" << std::endl;	
+	int t0 = CheckSorts(Test0, 4);
+	int t1 = CheckSorts(Test1, 5);
+	int t2 = CheckSorts(Test2, 6);
+	int t3 = CheckSorts(Test3, 8);
+	int t4 = CheckSorts(Test4, 8);
+	int t5 = CheckSorts(Test5, 0);
+	std::cout << t0 << " " << t1 << " " << t2 << " " << t3 << " " << t4 << " " << t5 << std::endl;
         return 0;
 }
