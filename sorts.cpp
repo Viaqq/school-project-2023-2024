@@ -1,6 +1,6 @@
 #include "work_array.h"
 
-void selectionSort(int* Ar, int size) {
+void SelectionSort(int* Ar, int size) {
         for (int i = 0; i < size; i++) {
 		int _Ar[size - i] = {};
 		int _i = i;
@@ -8,22 +8,22 @@ void selectionSort(int* Ar, int size) {
 			_Ar[l] = Ar[_i];
 			_i++;
 		}
-                int min = getMinIndexEl(_Ar, size - i) + i;
-                swap(&Ar[i], &Ar[min]);
+                int min = GetMin(_Ar, size - i) + i;
+                Swap(&Ar[i], &Ar[min]);
 	}
 }
 
-void bubbleSort(int* Ar, int size) {
+void BubbleSort(int* Ar, int size) {
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < (size - 1 - i); j++) {
 			if (Ar[j] < Ar[j + 1]) {
-				swap(&Ar[j], &Ar[j + 1]);
+				Swap(&Ar[j], &Ar[j + 1]);
 			}
 		}
 	}
 }
 
-void insertionSort(int* Ar, int size) {
+void InsertionSort(int* Ar, int size) {
 	for (int i = 1; i < size; i++) {
 		int a = Ar[i];
 		int j = i - 1;
@@ -35,7 +35,7 @@ void insertionSort(int* Ar, int size) {
 	}
 }
 
-void quickSort(int* Ar, int size) {
+void QuickSort(int* Ar, int size) {
 	int l = 0;
 	int r = size - 1;
 	int pivot = Ar[size / 2];
@@ -47,20 +47,20 @@ void quickSort(int* Ar, int size) {
 			r--;
 		}
 		if (l < r) {
-			swap(&Ar[l], &Ar[r]);
+			Swap(&Ar[l], &Ar[r]);
 			r--;
 			l++;
 		}
 		if (r > 0) {
-			quickSort(&Ar[0], l);
+			QuickSort(&Ar[0], l);
 		}
 		if (l < size) {
-			quickSort(&Ar[l], size - l);
+			QuickSort(&Ar[l], size - l);
 		}
 	}
 }
 
-void shellSort(int* Ar, int size) {
+void ShellSort(int* Ar, int size) {
 	for (int i = size / 2; i > 0; i = i / 2) {
 		for (int j = i; j < size; j++) {
 			int k = Ar[j];
@@ -74,10 +74,10 @@ void shellSort(int* Ar, int size) {
 	}
 }
 
-void countSort(int* Ar, int size) {
+void CountSort(int* Ar, int size) {
 
 }
 
-void mergeSort(int* Ar, int size) {
+void MergeSort(int* Ar, int size) {
 
 }
