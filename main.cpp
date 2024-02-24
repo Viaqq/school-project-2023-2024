@@ -29,5 +29,6 @@ void CreateEqMas(int* Ar, int* _Ar, int size) {
 }
 
 int main() {
+	//for testing functions
         return 0;
 }
