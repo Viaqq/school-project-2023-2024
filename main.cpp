@@ -1,6 +1,7 @@
 #include <iostream>
 #include "work_array.h"
 #include "sorts.h"
+#include <chrono>
 
 int CheckSorts(const int* Ar, int size) {
 	int minToMax = 0;
@@ -28,7 +29,22 @@ void CreateEqMas(int* Ar, int* _Ar, int size) {
         }
 }
 
+void TimeTest() {
+	int Sizes[10] = {100, 500, 1000, 2500, 5000, 10000, 50000, 100000, 500000, 1000000};
+	for (int i = 0; i < 10; i++) {
+		int Ar[Sizes[i]] = {};
+		for (int l = 0; l < Sizes[i]; l++) {
+			Ar[l] = rand() % 1000;
+		}
+		auto start_time = std::chrono::steady_clock::now();
+		QuickSort(Ar, Sizes[i]);
+		auto end_time = std::chrono::steady_clock::now();
+		std::cout << "duration time = " << std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count() << " us" << std::endl;
+	}
+}
+
 int main() {
-	//for testing functions
+	//TEST ALL FUNCTIONS (WHAT WAS THE MISTAKE IN CPP_13)!!!!!!!!!!!!!!!!!!
+	TimeTest();
         return 0;
 }

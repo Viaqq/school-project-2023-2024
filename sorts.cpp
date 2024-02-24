@@ -1,4 +1,40 @@
 #include "work_array.h"
+#include <cstring>
+
+//Why is it here?
+static void merge(int* Ar, int total_size, int left_size) {
+	int left = 0;
+	int right = left_size;
+	int l = 0;
+	int* res = new int [total_size];
+	while (l < total_size) {
+		if (Ar[left] >= Ar[right]) {
+			res[l] = Ar[right];
+			left++;
+			right++;
+			if (right < total_size) {
+				while (left < left_size) {
+					res[l++] = Ar[left++];
+				}
+				break;
+			}
+		}
+		if (Ar[left] < Ar[right]) {
+			res[l] = Ar[left];
+			left++;
+			l++;
+			if (left >= left_size) {
+				while (right < total_size) {
+					res[l++] = Ar[right++];
+				}
+				break;
+			}
+		}
+	}
+	std::memcpy(Ar, res, total_size * 4);
+	delete [] res;
+
+}
 
 void SelectionSort(int* Ar, int size) {
         for (int i = 0; i < size; i++) {
