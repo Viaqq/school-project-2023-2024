@@ -3,26 +3,6 @@
 #include "sorts.h"
 #include <chrono>
 
-int CheckSorts(const int* Ar, int size) {
-	int minToMax = 0;
-	int maxToMin = 0;
-	for (int i = 0; i < size - 1; i++) {
-		if (Ar[i] <= Ar[i + 1]) {
-			minToMax++;
-		}
-		if (Ar[i] >= Ar[i + 1]) {
-			maxToMin++;
-		}
-	}
-	if (minToMax == size - 1) {
-		return 0;
-	} else if (maxToMin == size - 1) {
-		return 1;
-	} else {
-		return -1;
-	}
-}
-
 void CreateEqMas(int* Ar, int* _Ar, int size) {
         for (int i = 0; i < size; i++) {
                 _Ar[i] = Ar[i];
@@ -45,6 +25,20 @@ void TimeTest() {
 
 int main() {
 	//TEST ALL FUNCTIONS (WHAT WAS THE MISTAKE IN CPP_13)!!!!!!!!!!!!!!!!!!
-	TimeTest();
+	int Sizes[10] = {100, 500, 1000, 2500, 5000, 10000, 50000, 100000, 500000, 1000000};
+	ShowAr(Sizes, 10);
+	for (int i = 1; i < 10; i++) {
+		Sizes[i] = rand() % 1000;
+	}
+	Sizes[0] = Sizes[8];
+	ShowAr(Sizes, 10);
+	//SelectionSort(Sizes, 10);
+	//InsertionSort(Sizes, 10);
+	//BubbleSort(Sizes, 10);
+	//QuickSort(Sizes, 10);
+	//MergeSort(Sizes, 10);
+	//ShellSort(Sizes, 10);
+	//CountSort(Sizes, 10);
+	ShowAr(Sizes, 10);
         return 0;
 }

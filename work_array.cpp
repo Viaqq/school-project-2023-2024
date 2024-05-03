@@ -1,23 +1,31 @@
 #include <iostream>
 
-int GetMin(int* Ar, int size) {
-	int min = 0;
-	for (int i = 0; i < size; i++) {
-		if (Ar[min] > Ar[i]) {
-			min = i;
+int GetMin(const int* Ar, int size) {
+	int left = 0;
+	int right = size - 1;
+	while (left < right) {
+		while (Ar[left] >= Ar[right] && left < right) {
+			left++;
+		}
+		while (Ar[right] > Ar[left] && left < right) {
+			right--;
 		}
 	}
-	return min;
+	return left;
 }
 
-int GetMax(int* Ar, int size) {
-	int max = 0;
-	for (int i; i < size; i++) {
-		if (Ar[max] < Ar[i]) {
-			max = i;
+int GetMax(const int* Ar, int size) {
+	int left = 0;
+	int right = size - 1;
+	while (left < right) {
+		while (Ar[left] <= Ar[right] && left < right) {
+			left++;
+		}
+		while (Ar[right] < Ar[left] && left < right) {
+			right--;
 		}
 	}
-	return max;
+	return left;
 }
 
 void Swap(int* a, int* b) {
@@ -26,13 +34,10 @@ void Swap(int* a, int* b) {
 	*b = c;
 }
 
-void ShowAr(int* Ar, int size) {
-	for (int i = 0; i < size; i++) {
-		std::cout << Ar[i];
-		if (i < (size - 1)) {
-			std::cout << " ";
-		} else {
-			std::cout << std::endl;
-		}
+void ShowAr(const int* Ar, int size, char del = ' ') {
+	std::cout << Ar[0];
+	for (int i = 1; i < size; i++) {
+		std::cout << del << Ar[i];
 	}
+	std::cout << std::endl;
 }

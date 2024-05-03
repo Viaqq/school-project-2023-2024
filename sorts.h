@@ -1,12 +1,12 @@
 #ifndef _SORTS_
 #define _SORTS_
 
-void SelectionSort(int* Ar, int size);
-void BubbleSort(int* Ar, int size);
-void InsertionSort(int* Ar, int size);
-void QuickSort(int* Ar, int size);
-void ShellSort(int* Ar, int size);
-//void CountSort(int* Ar, int size);
-//void MergeSort(int* Ar, int size);
+void SelectionSort(int*, int);
+void BubbleSort(int*, int);
+void InsertionSort(int*, int);
+void QuickSort(int*, int);
+void ShellSort(int*, int);
+void CountSort(int*, int);
+void MergeSort(int*, int);
 
 #endif
