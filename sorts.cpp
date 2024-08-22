@@ -1,5 +1,6 @@
 #include "work_array.h"
 #include <cstring>
+#include "sorts.h"
 
 static void merge(int* Ar, int total_left, int total_size) {
 	int left = 0;

@@ -1,4 +1,5 @@
 #include <iostream>
+#include "work_array.h"
 
 int GetMin(const int* Ar, int size) {
 	int left = 0;
