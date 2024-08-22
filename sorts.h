@@ -8,5 +8,6 @@ void QuickSort(int*, int);
 void ShellSort(int*, int);
 void CountSort(int*, int);
 void MergeSort(int*, int);
+int CheckSorts(const int*, int);
 
 #endif
