@@ -4,6 +4,6 @@
 int GetMin(const int*, int);
 int GetMax(const int*, int);
 void Swap(int*, int*);
-void ShowAr(const int*, int, char del = ' ');
+void ShowAr(const int*, int, char);
 
 #endif

@@ -12,8 +12,9 @@ void CreateEqualAr(int* Ar, int* _Ar, int size) {
 }
 
 int main() {
-	int a = ProcessKeys("HW_1y_14t_1");
-	int b = ProcessKeys("HW_1y_14t_5");
-	int c = ProcessKeys("HW_1y_16t_1");
+	struct Note {int a;} tet;
+	struct str {int b; char c;};
+	struct Dtf {int b;};
+	std::cout << 1 << std::endl;
 	return 0;
 }
